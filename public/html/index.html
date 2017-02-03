@@ -26,7 +26,7 @@ home!
 
     <div class="row"></div>
       <div class="form-group col-xs-6">
-          <input type="text" class="form-control" placeholder="Date">
+          <input type="text" class="form-control" placeholder="Date" id='date'>
 
 
 
@@ -36,14 +36,14 @@ home!
 <div>
 
   <div class="form-group col-xs-6">
-      <input type="text" class="form-control" placeholder="Category">
+      <input type="text" class="form-control" placeholder="Category" id='category'>
 
 </div>
 
 <div>
 
   <div class="form-group col-xs-12">
-      <input type="text" class="form-control" placeholder="Task">
+      <input type="text" class="form-control" placeholder="Task" id='task'>
 
 </div>
 
@@ -65,9 +65,11 @@ home!
 <!-- Example Todo -->
 <div class="row well">
 
-  <div class="col-xs-1"></div>
-    <input type="checkbox"
-  <div class="col-xs-9>">
+  <div class="col-xs-1">
+    <input type="checkbox">
+  </div>
+
+  <div class="col-xs-9">
 
     Name:  (Date)  [Category]
 
@@ -87,6 +89,9 @@ home!
 </div>
 
 <!-- end of example todo -->
+<ul id="list"></ul>
+
+
 
 
   </div>
