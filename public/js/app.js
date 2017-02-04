@@ -52,11 +52,11 @@ var todoApp = {
     todoApp.categoryInput.value = '';
 
     todoApp.render();
-    console.log(task);
+    //console.log(task);
 
   }
 
 };
 
-todoApp.init();
+//todoApp.init();
 //console.log(todoApp);
