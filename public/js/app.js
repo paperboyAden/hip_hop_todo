@@ -13,9 +13,11 @@ var todoApp = {
   cacheDom: function(){
     console.log('Caching the dom!!! Yayyy!!');
 
-    this.createButton = document.querySelector('#create');
-    this.taskInput = document.querySelector('#task');
-    this.list = document.querySelector('#list');
+    todoApp.createButton = document.querySelector('#create');
+    todoApp.taskInput = document.querySelector('#task');
+    todoApp.categoryInput = document.querySelector('#category');
+    todoApp.dateInput = document.querySelector('#date');
+    todoApp.list = document.querySelector('#list');
 
 
 
@@ -25,7 +27,7 @@ var todoApp = {
     console.log('Rendering!!! More Yayy!!');
     var listItemsFromTodos = this.todos
         .map(function(todo){
-      return '<li>'+ todo + '</li>';
+      return `<li>${todo.task}:(${todo.date})[${todo.category}]</li>`;
     })
         .join('');
     console.log(listItemsFromTodos);
@@ -37,10 +39,20 @@ var todoApp = {
   },
 
   addTodo: function (){
-    var taskValue = todoApp.taskInput.value;
-    todoApp.todos.push(taskValue);
+    var task = todoApp.taskInput.value;
+    var date = todoApp.dateInput.value;
+    var category = todoApp.categoryInput.value;
+    var newTodo = createTodo(task, date, category);
+    todoApp.todos.push(newTodo);
+
+
+    todoApp.todos.push(newTodo);
+    todoApp.taskInput.value = '';
+    todoApp.dateInput.value = '';
+    todoApp.categoryInput.value = '';
+
     todoApp.render();
-    console.log(taskValue);
+    console.log(task);
 
   }
 
